@@ -1,6 +1,6 @@
 env:
   global:
-    - ROLE_NAME: squid
+    - ROLE_NAME: atom
   matrix:
     - distro: centos7
       init: /usr/lib/systemd/systemd

@@ -1,5 +1,5 @@
 galaxy_info:
-  role_name: squid
+  role_name: atom
   author: Bastian Bukatz
   description: simple role to automatically backup a specific to an usb stick automatically on insertion.
 
@@ -15,7 +15,7 @@ galaxy_info:
     versions:
     - stretch
 
-  galaxy_tags: [raspberry,tigerjython,raspberrypi]
+  galaxy_tags: [atom,editor,centos]
 
 
 dependencies: []

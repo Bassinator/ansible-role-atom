@@ -1,10 +1,10 @@
 - name: Install OS Packages
-  yum:
+  apt:
     name: '{{ item }}'
   with_items: '{{ os_packages }}'
 - name: install atom editor
-  yum:
-    name: https://github.com/atom/atom/releases/download/v{{ version }}/atom.x86_64.rpm
+  apt:
+    deb: https://github.com/atom/atom/releases/download/v{{ version }}/atom-amd64.deb
     state: installed
 
 - block:

@@ -1,28 +1,30 @@
-# Ansible Role: squid
+# Ansible Role: bassitnator.atom
 
-[![Build Status](https://travis-ci.com/Bassinator/ansible-role-squid.svg?branch=master)](https://travis-ci.com/Bassinator/ansible-role-squid)
+[![Build Status](https://travis-ci.com/Bassinator/ansible-role-atom.svg?branch=master)](https://travis-ci.com/Bassinator/ansible-role-atom)
 
 Install tigerjython into user home directory
 
 ## Requirements
 
 java installed
+installation_os_user must exist
 
 ## Role Variables
 
-Noe
+None
 
 
 ## Dependencies
 
-None.
+None
 
 
 ## Example Playbook
 
-    - hosts: raspberries
+    - hosts: all
       roles:
-         - { role: bassinator.squid}
+      - role: bassinator.atom
+        installation_os_user: <your_user>
 
 ## License
 

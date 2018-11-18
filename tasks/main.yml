@@ -7,3 +7,14 @@
 
 - include_tasks: debian.yml
   when: ansible_os_family == "Debian"
+
+- block:
+  - name: get enabled atom packages
+    command: apm list --enabled --bare --packages
+    changed_when: False
+    become_user: '{{ installation_os_user }}'
+    register: apm_enabled
+  - name: disable atom welcome package
+    command: 'apm disable welcome'
+    when: apm_enabled.stdout.find("welcome") != -1
+  become_user: '{{ installation_os_user }}'

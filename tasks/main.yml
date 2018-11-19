@@ -8,15 +8,17 @@
 - include_tasks: debian.yml
   when: ansible_os_family == "Debian"
 
-- block:
-  - name: start atom first time
-    command: 'timeout 5 atom'
-  - name: get enabled atom packages
-    command: apm list --enabled --bare --packages
-    changed_when: False
-    become_user: '{{ installation_os_user }}'
-    register: apm_enabled
-  - name: disable atom welcome package
-    command: 'apm disable welcome'
-    when: apm_enabled.stdout.find("welcome") != -1
-  become_user: '{{ installation_os_user }}'
+
+# FIXME:
+# following does not work:
+# Error message: Could not find config.cson. Run Atom first?
+# - block:
+#   - name: get enabled atom packages
+#     command: apm list -i -e -b -p
+#     changed_when: False
+#     become_user: '{{ installation_os_user }}'
+#     register: apm_enabled
+#   - name: disable atom welcome package
+#     command: 'apm disable welcome'
+#     when: apm_enabled.stdout.find("welcome") != -1
+#   become_user: '{{ in

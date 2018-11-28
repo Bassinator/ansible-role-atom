@@ -1,11 +1,11 @@
 ---
 
 # tasks/main.yml
-- include_tasks: RedHat.yml
+- include: RedHat.yml
   when: ansible_os_family == "RedHat"
 
 
-- include_tasks: debian.yml
+- include: debian.yml
   when: ansible_os_family == "Debian"
 
 
